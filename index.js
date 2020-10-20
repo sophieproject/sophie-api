@@ -75,7 +75,7 @@ app.get('/api/pedodb/:username', function (req, res) {
 		   console.log(error)
 	   }
 	   console.log(JSON.stringify(results))
-	   if (JSON.stringify(results) == undefined) {
+	   if (JSON.stringify(results) == "[]") {
 		   res.end(`{"Error": "404", "Message": "This user is not in PedoDB", "Request": "${req.params.username} "Footer": "0"}`)
 	   } else {
 		res.end(JSON.stringify(results)); 
